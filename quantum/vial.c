@@ -24,6 +24,10 @@
 
 #include "vial_ensure_keycode.h"
 
+#ifdef SPLIT_KEYBOARD
+#include "split_util.h"
+#endif
+
 #define VIAL_UNLOCK_COUNTER_MAX 50
 
 #ifdef VIAL_INSECURE
@@ -42,6 +46,14 @@ static uint8_t vial_unlock_combo_cols[] = VIAL_UNLOCK_COMBO_COLS;
 #define VIAL_UNLOCK_NUM_KEYS (sizeof(vial_unlock_combo_rows)/sizeof(vial_unlock_combo_rows[0]))
 _Static_assert(VIAL_UNLOCK_NUM_KEYS < 15, "Max 15 unlock keys");
 _Static_assert(sizeof(vial_unlock_combo_rows) == sizeof(vial_unlock_combo_cols), "The number of unlock cols and rows should be the same");
+static uint8_t vial_unlock_combo_row(size_t i) {
+#ifdef SPLIT_KEYBOARD
+    return vial_unlock_combo_rows[i] +
+           (is_keyboard_left() ? 0 : MATRIX_ROWS / 2);
+#else
+    return vial_unlock_combo_rows[i];
+#endif
+}
 #endif
 
 #include "qmk_settings.h"
@@ -153,7 +165,8 @@ void vial_handle_cmd(uint8_t *msg, uint8_t length) {
 #ifndef VIAL_INSECURE
             /* Rest of the message are keys in the matrix that should be held to unlock the board */
             for (size_t i = 0; i < VIAL_UNLOCK_NUM_KEYS; ++i) {
-                msg[2 + i * 2] = vial_unlock_combo_rows[i];
+                // msg[2 + i * 2] = vial_unlock_combo_rows[i];
+                msg[2 + i * 2] = vial_unlock_combo_row(i);
                 msg[2 + i * 2 + 1] = vial_unlock_combo_cols[i];
             }
 #endif
@@ -170,7 +183,8 @@ void vial_handle_cmd(uint8_t *msg, uint8_t length) {
             if (vial_unlock_in_progress) {
                 int holding = 1;
                 for (size_t i = 0; i < VIAL_UNLOCK_NUM_KEYS; ++i)
-                    holding &= matrix_is_on(vial_unlock_combo_rows[i], vial_unlock_combo_cols[i]);
+                    // holding &= matrix_is_on(vial_unlock_combo_rows[i], vial_unlock_combo_cols[i]);
+                    holding &= matrix_is_on(vial_unlock_combo_row(i), vial_unlock_combo_cols[i]);
 
                 if (timer_elapsed(vial_unlock_timer) > 100 && holding) {
                     vial_unlock_timer = timer_read();
