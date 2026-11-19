@@ -119,7 +119,64 @@ enum custom_keycodes {
     RESET_TO_L08 = QK_KB_8,
     RESET_TO_L09 = QK_KB_9,
     RESET_TO_L10 = QK_KB_10,
+    APPLE_GLOBE = QK_KB_11,
 };
+
+// -- BEGIN - Apple Globe Key --------------------------------------------------
+
+#define APPLE_GLOBE_TAP_TOGGLE      2
+#define APPLE_GLOBE_TAP_WINDOW_MS   600
+#define APPLE_GLOBE_ONESHOT_TIMEOUT 6000
+
+static bool     apple_globe_pending       = false;
+static bool     apple_globe_locked        = false;
+static bool     apple_globe_oneshot_active = false;
+static uint8_t  apple_globe_tap_count     = 0;
+static uint8_t  apple_globe_active_row;
+static uint8_t  apple_globe_active_col;
+static uint32_t apple_globe_pending_timer;
+static uint32_t apple_globe_tap_timer;
+
+// Run after QMK has processed the key release, so the key and Globe
+// are not released in the wrong order.
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!record->event.pressed &&
+        apple_globe_oneshot_active &&
+        record->event.key.row == apple_globe_active_row &&
+        record->event.key.col == apple_globe_active_col) {
+        host_consumer_send(0);
+        apple_globe_oneshot_active = false;
+    }
+}
+
+void housekeeping_task_user(void) {
+    if (apple_globe_pending &&
+        timer_elapsed32(apple_globe_pending_timer) > APPLE_GLOBE_ONESHOT_TIMEOUT) {
+        apple_globe_pending = false;
+    }
+
+    if (apple_globe_tap_count > 0 &&
+        timer_elapsed32(apple_globe_tap_timer) > APPLE_GLOBE_TAP_WINDOW_MS) {
+        apple_globe_tap_count = 0;
+    }
+}
+
+static void clear_apple_globe_state(void) {
+    bool apple_globe_was_down = apple_globe_locked || apple_globe_oneshot_active;
+
+    apple_globe_pending        = false;
+    apple_globe_locked         = false;
+    apple_globe_oneshot_active = false;
+    apple_globe_tap_count      = 0;
+    apple_globe_pending_timer  = 0;
+    apple_globe_tap_timer      = 0;
+
+    if (apple_globe_was_down) {
+        host_consumer_send(0); // Release the Globe Consumer usage.
+    }
+}
+
+// -- END - Apple Globe Key -----------------------------------------------------
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (
@@ -136,6 +193,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         keycode == RESET_TO_L10
     ) {
         if (record->event.pressed) {
+            clear_apple_globe_state();      // Resets the One-Shot function for Apple's Globe Modifier
+
             clear_oneshot_mods();           // Clear pending OSM
             clear_oneshot_locked_mods();    // Clear tap-toggle-locked OSM
             clear_mods();
@@ -185,8 +244,47 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             default_layer_set(1UL << 0);    // Always make layer 0 the default layer
         }
         return false; // Don't send the custom keycode to the host
+    } else if ( keycode == APPLE_GLOBE ) {
+        if (!record->event.pressed) {
+            if (apple_globe_locked) {
+                // One tap unlocks it.
+                apple_globe_locked = false;
+                host_consumer_send(0);
+                apple_globe_tap_count = 0;
+            } else {
+                // Count rapid taps. The fifth locks Globe on.
+                if (apple_globe_tap_count > 0 &&
+                    timer_elapsed32(apple_globe_tap_timer) <= APPLE_GLOBE_TAP_WINDOW_MS) {
+                    apple_globe_tap_count++;
+                } else {
+                    apple_globe_tap_count = 1;
+                }
+                apple_globe_tap_timer = timer_read32();
+
+                if (apple_globe_tap_count >= APPLE_GLOBE_TAP_TOGGLE) {
+                    apple_globe_locked = true;
+                    apple_globe_pending = false;
+                    apple_globe_tap_count = 0;
+                    host_consumer_send(AC_NEXT_KEYBOARD_LAYOUT_SELECT);
+                } else {
+                    apple_globe_pending = true;
+                    apple_globe_pending_timer = timer_read32();
+                }
+            }
+        }
+        return false; // Don't send APPLE_GLOBE as a normal key.
+    } else {
+        // The first ordinary key after a Globe tap uses the one-shot.
+        if (record->event.pressed && apple_globe_pending && !apple_globe_locked) {
+            apple_globe_pending = false;
+            apple_globe_tap_count = 0;
+            apple_globe_oneshot_active = true;
+            apple_globe_active_row = record->event.key.row;
+            apple_globe_active_col = record->event.key.col;
+            host_consumer_send(AC_NEXT_KEYBOARD_LAYOUT_SELECT);
+        }
     }
-    return true;
+    return true; // Let QMK process the ordinary key normally.
 }
 
 #ifdef OLED_ENABLE

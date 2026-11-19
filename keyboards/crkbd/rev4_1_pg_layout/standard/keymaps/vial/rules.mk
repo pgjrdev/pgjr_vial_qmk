@@ -5,9 +5,9 @@ VIAL_ENABLE = yes
 COMBO_ENABLE = yes
 VIAL_COMBO_ENABLE = yes
 
-RGBLIGHT_ENABLE = no    # Can't have RGBLIGHT and RGB_MATRIX at the same time
-RGB_MATRIX_ENABLE = yes # Better choice to enable typing heatmap
-VIALRGB_ENABLE = yes    # Set "lighting" value in vial.json to "vialrgb"
+RGBLIGHT_ENABLE = no		# Can't have RGBLIGHT and RGB_MATRIX at the same time
+RGB_MATRIX_ENABLE = yes		# Better choice to enable typing heatmap
+VIALRGB_ENABLE = yes		# Set "lighting" value in vial.json to "vialrgb"
 
 CAPS_WORD_ENABLE = yes
 DYNAMIC_MACRO_ENABLE = yes
@@ -22,5 +22,7 @@ ENCODER_ENABLE = no
 ENCODER_MAP_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 LAYER_LOCK_ENABLE = no
-# OLED_DRIVER =         # Comment out if the keyboard doesn't have an OLED
+# OLED_DRIVER =				# Comment out if the keyboard doesn't have an OLED
 OLED_ENABLE = no
+
+KEYBOARD_SHARED_EP = yes	# For the Globe/Fn key ( MacOS / iPadOS ) to work

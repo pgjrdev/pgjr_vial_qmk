@@ -4,16 +4,16 @@
 #define VIAL_UNLOCK_COMBO_ROWS {0, 0}
 #define VIAL_UNLOCK_COMBO_COLS {0, 1}
 
-// #define MASTER_LEFT
+#define MASTER_LEFT
 // #define MASTER_RIGHT
-#define EE_HANDS            // The Firmware will read the handedness through EEPROM (this can also be set through VIAL using EEH Left/Right)
+// #define EE_HANDS            // The Firmware will read the handedness through EEPROM (this can also be set through VIAL using EEH Left/Right)
 
 #undef DYNAMIC_KEYMAP_LAYER_COUNT // Enable this if there's an error of `already defined`
 #define DYNAMIC_KEYMAP_LAYER_COUNT 11
-#define DYNAMIC_KEYMAP_MACRO_COUNT 61
+#define DYNAMIC_KEYMAP_MACRO_COUNT 81
 
 #define VIAL_ALT_REPEAT_KEY_ENTRIES 80
-#define VIAL_COMBO_ENTRIES 80
+#define VIAL_COMBO_ENTRIES 120
 #define VIAL_TAP_DANCE_ENTRIES 41
 
 // QMK Settings -> Tap-Hold

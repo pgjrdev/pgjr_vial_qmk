@@ -39,57 +39,62 @@
         {
             "name": "RESET_TO_L00",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR00"
+            "shortName": "Reset\nLyr00"
         },
         {
             "name": "RESET_TO_L01",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR01"
+            "shortName": "Reset\nLyr01"
         },
         {
             "name": "RESET_TO_L02",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR02"
+            "shortName": "Reset\nLyr02"
         },
         {
             "name": "RESET_TO_L03",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR03"
+            "shortName": "Reset\nLyr03"
         },
         {
             "name": "RESET_TO_L04",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR04"
+            "shortName": "Reset\nLyr04"
         },
         {
             "name": "RESET_TO_L05",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR05"
+            "shortName": "Reset\nLyr05"
         },
         {
             "name": "RESET_TO_L06",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR06"
+            "shortName": "Reset\nLyr06"
         },
         {
             "name": "RESET_TO_L07",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR07"
+            "shortName": "Reset\nLyr07"
         },
         {
             "name": "RESET_TO_L08",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR08"
+            "shortName": "Reset\nLyr08"
         },
         {
             "name": "RESET_TO_L09",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR09"
+            "shortName": "Reset\nLyr09"
         },
         {
             "name": "RESET_TO_L10",
             "title": "Reset OSM, OSL, and active layers; then move to the corresponding layer",
-            "shortName": "RESET\nLYR10"
+            "shortName": "Reset\nLyr10"
+        },
+        {
+            "name": "APPLE_GLOBE",
+            "title": "Globe key for Apple OS (MacOS, iPadOS, and iOS)",
+            "shortName": "Apple\nGlobe"
         }
     ]
 }
