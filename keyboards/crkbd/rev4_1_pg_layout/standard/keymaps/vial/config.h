@@ -8,6 +8,14 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS            // The Firmware will read the handedness through EEPROM (this can also be set through VIAL using EEH Left/Right)
 
+// Enable Unicode for both MacOS and Windows
+// Necessary for en dash, em dash, ellipsis, and etc.
+#define UNICODE_SELECTED_MODES \
+        UNICODE_MODE_WINCOMPOSE, \
+        UNICODE_MODE_MACOS, \
+        UNICODE_MODE_LINUX
+#define UNICODE_CYCLE_PERSIST false
+
 #undef DYNAMIC_KEYMAP_LAYER_COUNT // Enable this if there's an error of `already defined`
 #define DYNAMIC_KEYMAP_LAYER_COUNT 11
 #define DYNAMIC_KEYMAP_MACRO_COUNT 81
@@ -40,3 +48,4 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 1
 #define MOUSEKEY_WHEEL_DELTA 1
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 0
+

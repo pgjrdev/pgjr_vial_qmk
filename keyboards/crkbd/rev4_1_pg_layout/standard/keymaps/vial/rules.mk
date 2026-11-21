@@ -25,4 +25,7 @@ LAYER_LOCK_ENABLE = no
 # OLED_DRIVER =				# Comment out if the keyboard doesn't have an OLED
 OLED_ENABLE = no
 
+UNICODE_COMMON = yes
+UNICODE_ENABLE = yes
+
 KEYBOARD_SHARED_EP = yes	# For the Globe/Fn key ( MacOS / iPadOS ) to work

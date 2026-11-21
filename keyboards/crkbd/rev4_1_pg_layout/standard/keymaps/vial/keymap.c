@@ -106,20 +106,94 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // END: RGB color based on active layer
 //
 
+// Define QK_KB_32 and higher
+enum {
+    QK_KB_32 = QK_KB_31 + 1,
+    QK_KB_33,
+    QK_KB_34,
+    QK_KB_35,
+    QK_KB_36,
+    QK_KB_37,
+    QK_KB_38,
+    QK_KB_39,
+    QK_KB_40,
+    QK_KB_41,
+    QK_KB_42,
+    QK_KB_43,
+    QK_KB_44,
+    QK_KB_45,
+    QK_KB_46,
+    QK_KB_47,
+    QK_KB_48,
+    QK_KB_49,
+    QK_KB_50,
+    QK_KB_51,
+    QK_KB_52,
+    QK_KB_53,
+    QK_KB_54,
+    QK_KB_55,
+    QK_KB_56,
+    QK_KB_57,
+    QK_KB_58,
+    QK_KB_59,
+    QK_KB_60,
+    QK_KB_61,
+    QK_KB_62,
+    QK_KB_63,
+};
+
 // Custom keycodes
 enum custom_keycodes {
-    RESET_TO_L00 = QK_KB_0,
-    RESET_TO_L01 = QK_KB_1,
-    RESET_TO_L02 = QK_KB_2,
-    RESET_TO_L03 = QK_KB_3,
-    RESET_TO_L04 = QK_KB_4,
-    RESET_TO_L05 = QK_KB_5,
-    RESET_TO_L06 = QK_KB_6,
-    RESET_TO_L07 = QK_KB_7,
-    RESET_TO_L08 = QK_KB_8,
-    RESET_TO_L09 = QK_KB_9,
-    RESET_TO_L10 = QK_KB_10,
-    APPLE_GLOBE = QK_KB_11,
+    RESET_TO_L00       = QK_KB_0,
+    RESET_TO_L01       = QK_KB_1,
+    RESET_TO_L02       = QK_KB_2,
+    RESET_TO_L03       = QK_KB_3,
+    RESET_TO_L04       = QK_KB_4,
+    RESET_TO_L05       = QK_KB_5,
+    RESET_TO_L06       = QK_KB_6,
+    RESET_TO_L07       = QK_KB_7,
+    RESET_TO_L08       = QK_KB_8,
+    RESET_TO_L09       = QK_KB_9,
+    RESET_TO_L10       = QK_KB_10,
+
+    APPLE_GLOBE        = QK_KB_11,
+
+    UC_MODE_WINC       = QK_KB_12,
+    UC_MODE_MAC        = QK_KB_13,
+    UC_MODE_LINUX      = QK_KB_14,
+
+    UC_DASH_EN         = QK_KB_15,
+    UC_DASH_EM         = QK_KB_16,
+    UC_DASH_EMEM       = QK_KB_17,
+    UC_DASH_EMEMEM     = QK_KB_18,
+    UC_ELLIPSIS        = QK_KB_19,
+    UC_BULLET          = QK_KB_20,
+    UC_MIDDLEDOT       = QK_KB_21,
+    UC_CURLY_SQ_LEFT   = QK_KB_22,
+    UC_CURLY_SQ_RIGHT  = QK_KB_23,
+    UC_CURLY_DQ_LEFT   = QK_KB_24,
+    UC_CURLY_DQ_RIGHT  = QK_KB_25,
+    UC_SIGN_COPYRIGHT  = QK_KB_26,
+    UC_SIGN_REGISTERED = QK_KB_27,
+    UC_SIGN_TRADEMARK  = QK_KB_28,
+    UC_SIGN_DEGREE     = QK_KB_29,
+    UC_OP_MULTIPLY     = QK_KB_30,
+    UC_OP_DIVISION     = QK_KB_31,
+    UC_OP_LESSEQ       = QK_KB_32,
+    UC_OP_GREATEQ      = QK_KB_33,
+
+    UC_ARROW_NORTHWEST = QK_KB_34,
+    UC_ARROW_NORTH     = QK_KB_35,
+    UC_ARROW_NORTHEAST = QK_KB_36,
+    UC_ARROW_EAST      = QK_KB_37,
+    UC_ARROW_SOUTHEAST = QK_KB_38,
+    UC_ARROW_SOUTH     = QK_KB_39,
+    UC_ARROW_SOUTHWEST = QK_KB_40,
+    UC_ARROW_WEST      = QK_KB_41,
+
+    UC_DEADKEY_GRAVE   = QK_KB_42,
+    UC_DEADKEY_ACUTE   = QK_KB_43,
+    UC_DEADKEY_TILDE   = QK_KB_44,
 };
 
 // -- BEGIN - Apple Globe Key --------------------------------------------------
@@ -273,6 +347,152 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         }
         return false; // Don't send APPLE_GLOBE as a normal key.
+    } else if (
+        keycode == UC_MODE_WINC ||
+        keycode == UC_MODE_MAC ||
+        keycode == UC_MODE_LINUX ||
+
+        keycode == UC_DASH_EN ||
+        keycode == UC_DASH_EM ||
+        keycode == UC_DASH_EMEM ||
+        keycode == UC_DASH_EMEMEM ||
+        keycode == UC_ELLIPSIS ||
+        keycode == UC_BULLET ||
+        keycode == UC_MIDDLEDOT ||
+        keycode == UC_CURLY_SQ_LEFT ||
+        keycode == UC_CURLY_SQ_RIGHT ||
+        keycode == UC_CURLY_DQ_LEFT ||
+        keycode == UC_CURLY_DQ_RIGHT ||
+        keycode == UC_SIGN_COPYRIGHT ||
+        keycode == UC_SIGN_REGISTERED ||
+        keycode == UC_SIGN_TRADEMARK ||
+        keycode == UC_SIGN_DEGREE ||
+        keycode == UC_OP_MULTIPLY ||
+        keycode == UC_OP_DIVISION ||
+        keycode == UC_OP_LESSEQ ||
+        keycode == UC_OP_GREATEQ ||
+
+        keycode == UC_ARROW_NORTHWEST ||
+        keycode == UC_ARROW_NORTH ||
+        keycode == UC_ARROW_NORTHEAST ||
+        keycode == UC_ARROW_EAST ||
+        keycode == UC_ARROW_SOUTHEAST ||
+        keycode == UC_ARROW_SOUTH ||
+        keycode == UC_ARROW_SOUTHWEST ||
+        keycode == UC_ARROW_WEST ||
+
+        keycode == UC_DEADKEY_GRAVE ||
+        keycode == UC_DEADKEY_ACUTE ||
+        keycode == UC_DEADKEY_TILDE
+    ) {
+        if (!record->event.pressed) {
+            return true;
+        }
+
+        switch (keycode) {
+            case UC_MODE_WINC:
+                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE);
+                return false;
+            case UC_MODE_MAC:
+                set_unicode_input_mode(UNICODE_MODE_MACOS);
+                return false;
+            case UC_MODE_LINUX:
+                set_unicode_input_mode(UNICODE_MODE_LINUX);
+                return false;
+
+            case UC_DASH_EN:
+                register_unicode(0x2013);
+                return false;
+            case UC_DASH_EM:
+                register_unicode(0x2014);
+                return false;
+            case UC_DASH_EMEM:
+                register_unicode(0x2E3A);
+                return false;
+            case UC_DASH_EMEMEM:
+                register_unicode(0x2E3B);
+                return false;
+            case UC_ELLIPSIS:
+                register_unicode(0x2026);
+                return false;
+            case UC_BULLET:
+                register_unicode(0x2022);
+                return false;
+            case UC_MIDDLEDOT:
+                register_unicode(0x00B7);
+                return false;
+            case UC_CURLY_SQ_LEFT:
+                register_unicode(0x2018);
+                return false;
+            case UC_CURLY_SQ_RIGHT:
+                register_unicode(0x2019);
+                return false;
+            case UC_CURLY_DQ_LEFT:
+                register_unicode(0x201C);
+                return false;
+            case UC_CURLY_DQ_RIGHT:
+                register_unicode(0x201D);
+                return false;
+            case UC_SIGN_COPYRIGHT:
+                register_unicode(0x00A9);
+                return false;
+            case UC_SIGN_REGISTERED:
+                register_unicode(0x00AE);
+                return false;
+            case UC_SIGN_TRADEMARK:
+                register_unicode(0x2122);
+                return false;
+            case UC_SIGN_DEGREE:
+                register_unicode(0x00B0);
+                return false;
+            case UC_OP_MULTIPLY:
+                register_unicode(0x00D7);
+                return false;
+            case UC_OP_DIVISION:
+                register_unicode(0x00F7);
+                return false;
+            case UC_OP_LESSEQ:
+                register_unicode(0x2264);
+                return false;
+            case UC_OP_GREATEQ:
+                register_unicode(0x2265);
+                return false;
+
+            case UC_ARROW_NORTHWEST:
+                register_unicode(0x2196);
+                return false;
+            case UC_ARROW_NORTH:
+                register_unicode(0x2191);
+                return false;
+            case UC_ARROW_NORTHEAST:
+                register_unicode(0x2197);
+                return false;
+            case UC_ARROW_EAST:
+                register_unicode(0x2192);
+                return false;
+            case UC_ARROW_SOUTHEAST:
+                register_unicode(0x2198);
+                return false;
+            case UC_ARROW_SOUTH:
+                register_unicode(0x2193);
+                return false;
+            case UC_ARROW_SOUTHWEST:
+                register_unicode(0x2199);
+                return false;
+            case UC_ARROW_WEST:
+                register_unicode(0x2190);
+                return false;
+
+            case UC_DEADKEY_GRAVE:
+                register_unicode(0x0300);
+                return false;
+            case UC_DEADKEY_ACUTE:
+                register_unicode(0x0301);
+                return false;
+            case UC_DEADKEY_TILDE:
+                register_unicode(0x0303);
+                return false;
+        }
     } else {
         // The first ordinary key after a Globe tap uses the one-shot.
         if (record->event.pressed && apple_globe_pending && !apple_globe_locked) {
