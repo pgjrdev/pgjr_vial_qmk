@@ -6,7 +6,7 @@
 
 #define MASTER_LEFT
 // #define MASTER_RIGHT
-// #define EE_HANDS            // The Firmware will read the handedness through EEPROM (this can also be set through VIAL using EEH Left/Right)
+// #define EE_HANDS                 // The Firmware will read the handedness through EEPROM (this can also be set through VIAL using EEH Left/Right)
 
 // Enable Unicode for both MacOS and Windows
 // Necessary for en dash, em dash, ellipsis, and etc.
@@ -17,7 +17,7 @@
 #define UNICODE_KEY_WINC KC_F24
 #define UNICODE_CYCLE_PERSIST false
 
-#undef DYNAMIC_KEYMAP_LAYER_COUNT // Enable this if there's an error of `already defined`
+#undef DYNAMIC_KEYMAP_LAYER_COUNT   // Enable this if there's an error of `already defined`
 #define DYNAMIC_KEYMAP_LAYER_COUNT 11
 #define DYNAMIC_KEYMAP_MACRO_COUNT 81
 
@@ -28,24 +28,25 @@
 // QMK Settings -> Tap-Hold
 #define TAPPING_TERM 600
 #define QUICK_TAP_TERM 600
-#define TAPPING_TOGGLE 2       // Taps needed to toggle a TT(layer) key
+#define TAPPING_TOGGLE 2        // Taps needed to toggle a TT(layer) key
 
 // QMK Settings -> Combo
-#define COMBO_TERM 80          // Increasing this may make all keys sluggish
+#define COMBO_TERM 80           // Increasing this may make all keys sluggish
 
 // QMK Settings -> One Shot Keys
-#define ONESHOT_TAP_TOGGLE 2   // Taps needed to lock a one-shot key
-#define ONESHOT_TIMEOUT 6000   // One-shot timeout in milliseconds
+#define ONESHOT_TAP_TOGGLE 2    // Taps needed to lock a one-shot key
+#define ONESHOT_TIMEOUT 6000    // One-shot timeout in milliseconds
 
 // QMK Settings -> Mouse keys
-#define MOUSEKEY_OVERLAP_RESET // Acceleration resets when MOUSEKEY movement overlaps with each other
+#define MK_COMBINED             // Allows the use of speed key with acceleration
+#define MOUSEKEY_OVERLAP_RESET  // Acceleration resets when MOUSEKEY movement overlaps with each other
 #define MOUSEKEY_DELAY 0
 #define MOUSEKEY_INTERVAL 20
 #define MOUSEKEY_MOVE_DELTA 1
-#define MOUSEKEY_MAX_SPEED 240
+#define MOUSEKEY_MAX_SPEED 200
 #define MOUSEKEY_TIME_TO_MAX 100
 #define MOUSEKEY_WHEEL_DELAY 120
-#define MOUSEKEY_WHEEL_INTERVAL 6
+#define MOUSEKEY_WHEEL_INTERVAL 10
 #define MOUSEKEY_WHEEL_MAX_SPEED 1
 #define MOUSEKEY_WHEEL_DELTA 1
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 0
