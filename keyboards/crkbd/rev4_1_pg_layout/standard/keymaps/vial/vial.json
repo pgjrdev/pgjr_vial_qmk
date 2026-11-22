@@ -101,171 +101,171 @@
         {
             "name": "UC_MODE_WINC",
             "title": "",
-            "shortName": "U-Code\nWinC"
+            "shortName": "UCode\nWinC"
         },
         {
             "name": "UC_MODE_MAC",
             "title": "",
-            "shortName": "U-Code\nMac"
+            "shortName": "UCode\nMac"
         },
         {
             "name": "UC_MODE_LINUX",
             "title": "",
-            "shortName": "U-Code\nLinux"
+            "shortName": "UCode\nLinux"
         },
 
         {
             "name": "UC_DASH_EN",
             "title": "",
-            "shortName": "U-Code\nEn"
+            "shortName": "UCode\nEn"
         },
         {
             "name": "UC_DASH_EM",
             "title": "",
-            "shortName": "U-Code\nEm"
+            "shortName": "UCode\nEm"
         },
         {
             "name": "UC_DASH_EMEM",
             "title": "",
-            "shortName": "U-Code\nEm-2"
+            "shortName": "UCode\nEm-2"
         },
         {
             "name": "UC_DASH_EMEMEM",
             "title": "",
-            "shortName": "U-Code\nEm-3"
+            "shortName": "UCode\nEm-3"
         },
         {
             "name": "UC_ELLIPSIS",
             "title": "",
-            "shortName": "U-Code\nEllipsis"
+            "shortName": "UCode\nEllipsis"
         },
         {
             "name": "UC_BULLET",
             "title": "",
-            "shortName": "U-Code\nBullet"
+            "shortName": "UCode\nBullet"
         },
         {
             "name": "UC_MIDDLEDOT",
             "title": "",
-            "shortName": "U-Code\nMidDot"
+            "shortName": "UCode\nMidDot"
         },
         {
             "name": "UC_CURLY_SQ_LEFT",
             "title": "",
-            "shortName": "U-Code\n' Left"
+            "shortName": "UCode\n' Left"
         },
         {
             "name": "UC_CURLY_SQ_RIGHT",
             "title": "",
-            "shortName": "U-Code\n' Right"
+            "shortName": "UCode\n' Right"
         },
         {
             "name": "UC_CURLY_DQ_LEFT",
             "title": "",
-            "shortName": "U-Code\n\" Left"
+            "shortName": "UCode\n\" Left"
         },
         {
             "name": "UC_CURLY_DQ_RIGHT",
             "title": "",
-            "shortName": "U-Code\n\" Right"
+            "shortName": "UCode\n\" Right"
         },
         {
             "name": "UC_SIGN_COPYRIGHT",
             "title": "",
-            "shortName": "U-Code\nCopy-\nright"
+            "shortName": "UCode\nCopy-\nright"
         },
         {
             "name": "UC_SIGN_REGISTERED",
             "title": "",
-            "shortName": "U-Code\nRegis-\ntered"
+            "shortName": "UCode\nRegis-\ntered"
         },
         {
             "name": "UC_SIGN_TRADEMARK",
             "title": "",
-            "shortName": "U-Code\nTrade\nmark"
+            "shortName": "UCode\nTrade\nmark"
         },
         {
             "name": "UC_SIGN_DEGREE",
             "title": "",
-            "shortName": "U-Code\nDegree"
+            "shortName": "UCode\nDegree"
         },
         {
             "name": "UC_OP_MULTIPLY",
             "title": "",
-            "shortName": "U-Code\nx"
+            "shortName": "UCode\nx"
         },
         {
             "name": "UC_OP_DIVISION",
             "title": "",
-            "shortName": "U-Code\n/"
+            "shortName": "UCode\n/"
         },
         {
             "name": "UC_OP_LESSEQ",
             "title": "",
-            "shortName": "U-Code\n<="
+            "shortName": "UCode\n<="
         },
         {
             "name": "UC_OP_GREATEQ",
             "title": "",
-            "shortName": "U-Code\n>="
+            "shortName": "UCode\n>="
         },
 
         {
             "name": "UC_ARROW_NORTHWEST",
             "title": "",
-            "shortName": "U-Code\nNW"
+            "shortName": "UCode\nNW"
         },
         {
             "name": "UC_ARROW_NORTH",
             "title": "",
-            "shortName": "U-Code\nN"
+            "shortName": "UCode\nN"
         },
         {
             "name": "UC_ARROW_NORTHEAST",
             "title": "",
-            "shortName": "U-Code\nNE"
+            "shortName": "UCode\nNE"
         },
         {
             "name": "UC_ARROW_EAST",
             "title": "",
-            "shortName": "U-Code\nE"
+            "shortName": "UCode\nE"
         },
         {
             "name": "UC_ARROW_SOUTHEAST",
             "title": "",
-            "shortName": "U-Code\nSE"
+            "shortName": "UCode\nSE"
         },
         {
             "name": "UC_ARROW_SOUTH",
             "title": "",
-            "shortName": "U-Code\nS"
+            "shortName": "UCode\nS"
         },
         {
             "name": "UC_ARROW_SOUTHWEST",
             "title": "",
-            "shortName": "U-Code\nSW"
+            "shortName": "UCode\nSW"
         },
         {
             "name": "UC_ARROW_WEST",
             "title": "",
-            "shortName": "U-Code\nW"
+            "shortName": "UCode\nW"
         },
 
 
         {
             "name": "UC_DEADKEY_GRAVE",
             "title": "",
-            "shortName": "U-Code\nGrave"
+            "shortName": "UCode\nGrave"
         },
         {
             "name": "UC_DEADKEY_ACUTE",
             "title": "",
-            "shortName": "U-Code\nAcute"
+            "shortName": "UCode\nAcute"
         },
         {
             "name": "UC_DEADKEY_TILDE",
             "title": "",
-            "shortName": "U-Code\nTilde"
+            "shortName": "UCode\nTilde"
         }
 
     ]

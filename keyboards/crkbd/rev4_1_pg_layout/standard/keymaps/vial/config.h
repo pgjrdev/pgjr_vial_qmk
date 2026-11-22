@@ -14,6 +14,7 @@
         UNICODE_MODE_WINCOMPOSE, \
         UNICODE_MODE_MACOS, \
         UNICODE_MODE_LINUX
+#define UNICODE_KEY_WINC KC_F24
 #define UNICODE_CYCLE_PERSIST false
 
 #undef DYNAMIC_KEYMAP_LAYER_COUNT // Enable this if there's an error of `already defined`
