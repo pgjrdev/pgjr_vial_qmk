@@ -194,6 +194,11 @@ enum custom_keycodes {
     UC_DEADKEY_GRAVE   = QK_KB_42,
     UC_DEADKEY_ACUTE   = QK_KB_43,
     UC_DEADKEY_TILDE   = QK_KB_44,
+
+    UC_OP_CHECKMARK    = QK_KB_45,
+    UC_OP_CHECKMARKH   = QK_KB_46,
+    UC_OP_XMARK        = QK_KB_47,
+    UC_OP_XMARKH       = QK_KB_48,
 };
 
 // -- BEGIN - Apple Globe Key --------------------------------------------------
@@ -383,7 +388,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         keycode == UC_DEADKEY_GRAVE ||
         keycode == UC_DEADKEY_ACUTE ||
-        keycode == UC_DEADKEY_TILDE
+        keycode == UC_DEADKEY_TILDE ||
+
+        keycode == UC_OP_CHECKMARK ||
+        keycode == UC_OP_CHECKMARKH ||
+        keycode == UC_OP_XMARK ||
+        keycode == UC_OP_XMARKH
     ) {
         if (!record->event.pressed) {
             return true;
@@ -491,6 +501,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             case UC_DEADKEY_TILDE:
                 register_unicode(0x0303);
+                return false;
+
+            case UC_OP_CHECKMARK:
+                register_unicode(0x2713);
+                return false;
+            case UC_OP_CHECKMARKH:
+                register_unicode(0x2714);
+                return false;
+            case UC_OP_XMARK:
+                register_unicode(0x2717);
+                return false;
+            case UC_OP_XMARKH:
+                register_unicode(0x2718);
                 return false;
         }
     } else {

@@ -266,7 +266,27 @@
             "name": "UC_DEADKEY_TILDE",
             "title": "",
             "shortName": "UCode\nTilde"
-        }
+        },
 
+        {
+            "name": "UC_OP_CHECKMARK",
+            "title": "",
+            "shortName": "UCode\nCheck-\nmark"
+        },
+        {
+            "name": "UC_OP_CHECKMARKH",
+            "title": "",
+            "shortName": "UCode\nCheck-\nmarkH"
+        },
+        {
+            "name": "UC_OP_XMARK",
+            "title": "",
+            "shortName": "UCode\nXmark"
+        },
+        {
+            "name": "UC_OP_XMARKH",
+            "title": "",
+            "shortName": "UCode\nXmarkH"
+        }
     ]
 }
