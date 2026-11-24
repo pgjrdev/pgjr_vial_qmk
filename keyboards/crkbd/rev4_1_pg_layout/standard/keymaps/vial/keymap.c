@@ -199,6 +199,11 @@ enum custom_keycodes {
     UC_OP_CHECKMARKH   = QK_KB_46,
     UC_OP_XMARK        = QK_KB_47,
     UC_OP_XMARKH       = QK_KB_48,
+
+    UC_OP_HOURGLASS    = QK_KB_49,
+    UC_OP_HOURGLASS_F  = QK_KB_50,
+
+    UC_VAR_SELECT      = QK_KB_51,
 };
 
 // -- BEGIN - Apple Globe Key --------------------------------------------------
@@ -393,7 +398,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         keycode == UC_OP_CHECKMARK ||
         keycode == UC_OP_CHECKMARKH ||
         keycode == UC_OP_XMARK ||
-        keycode == UC_OP_XMARKH
+        keycode == UC_OP_XMARKH ||
+
+        keycode == UC_OP_HOURGLASS ||
+        keycode == UC_OP_HOURGLASS_F ||
+
+        keycode == UC_VAR_SELECT
     ) {
         if (!record->event.pressed) {
             return true;
@@ -514,6 +524,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             case UC_OP_XMARKH:
                 register_unicode(0x2718);
+                return false;
+
+            case UC_OP_HOURGLASS:
+                register_unicode(0x29D6);
+                return false;
+            case UC_OP_HOURGLASS_F:
+                register_unicode(0x23F3);
+                return false;
+
+            case UC_VAR_SELECT:
+                register_unicode(0xFE0E);
                 return false;
         }
     } else {

@@ -254,39 +254,56 @@
 
         {
             "name": "UC_DEADKEY_GRAVE",
-            "title": "",
+            "title": "Combining Grave",
             "shortName": "UCode\nGrave"
         },
         {
             "name": "UC_DEADKEY_ACUTE",
-            "title": "",
+            "title": "Combining Acute",
             "shortName": "UCode\nAcute"
         },
         {
             "name": "UC_DEADKEY_TILDE",
-            "title": "",
+            "title": "Combining Tilde",
             "shortName": "UCode\nTilde"
         },
 
         {
             "name": "UC_OP_CHECKMARK",
-            "title": "",
+            "title": "Check Mark",
             "shortName": "UCode\nCheck-\nmark"
         },
         {
             "name": "UC_OP_CHECKMARKH",
-            "title": "",
+            "title": "Check Mark Heavy",
             "shortName": "UCode\nCheck-\nmarkH"
         },
         {
             "name": "UC_OP_XMARK",
-            "title": "",
+            "title": "X Mark",
             "shortName": "UCode\nXmark"
         },
         {
             "name": "UC_OP_XMARKH",
-            "title": "",
+            "title": "X Mark Heavy",
             "shortName": "UCode\nXmarkH"
+        },
+
+        {
+            "name": "UC_OP_HOURGLASS",
+            "title": "Hourglass",
+            "shortName": "UCode\nHour-\nglass"
+        },
+        {
+            "name": "UC_OP_HOURGLASS_F",
+            "title": "Flowing Hourglass",
+            "shortName": "UCode\nHour-\nglassF"
+        },
+
+        {
+            "name": "UC_VAR_SELECT",
+            "title": "Variation Selector-15",
+            "shortName": "UCode\nVS15"
         }
     ]
 }
